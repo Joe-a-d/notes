@@ -1,0 +1,2 @@
+- w.r.t the project [[Graham et al. - 2020 - Dense Steerable Filter CNNs for Exploiting Rotatio.pdf]] might be relevant here, since it seems to talk about the downsides of augmentation techniques and offers an alternative
+	-  [ ] revisit this after [[Todo#^843f05]]

@@ -1,0 +1,9 @@
+# Naive
+- [[Selectionsort]]
+- [[Insertionsort]]
+- [[Bubblesort]]
+# Clever
+- [[Mergesort]]
+- [[Heapsort]]
+# Fastest
+- [[Quicksort]]

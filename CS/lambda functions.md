@@ -1,0 +1,9 @@
+- You've seen functions of the type $f(x) =  x + x$. WIthout getting too fancy, essentially you are mapping inputs from one domain into some other domain. The output domain is determined by the computation that the function body performs
+	- this functions are usually labeled by some letter, and can be combined. Whenever we see it's label $f,g, \dots$ we are essentialy saying replace this by the computation
+- Lambda functions are anonymous meaning that they don't have labels. Formally introduced by [[Alonzo Church]] in TODO they are usually written as $\lambda x.x+x$ the $lambda$ indicates the start of the function, to its right we have the input variables and to the right of the $.$ the computation to be performed
+- [ ] expand on how when combined they are evaluated by performing a set of rules/[[reductions]]
+- **example in PLs**
+	- In [[python]] lambda expressions have the form `lambda <params> : <expression`
+		-  **note** no statements allowed, the computation must be expressed as a single expression
+		- ![[Pasted image 20210901120606.png]]
+	- In [[Haskell]] the syntax is `\<param> <other_params> -> <expression>` ^c8ef29

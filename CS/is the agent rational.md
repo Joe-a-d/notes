@@ -1,0 +1,7 @@
+- according to Russel maximising , an [[agent]] is [[Rational|rational]] if 
+	- [ ] copy definition
+	- in the end, *being rational means maximising expected utility*
+- no omniscience, best decision with current information (airplane door crossing road example)
+- being rational does not imply success
+- may require exploration, learning, autonomy
+- 

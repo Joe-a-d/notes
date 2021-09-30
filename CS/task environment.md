@@ -1,0 +1,12 @@
+## properties of the environment which we use to characterise and analyse it
+- fully vs partially observable
+	- agents can still be rational even if they can't observe the world (e.g. roomba which move randomly)
+- deterministic vs stochastic
+- static vs dynamic
+	- the environment changes, hence time matters when making decisions
+- discrete vs continuous
+	- whether the possible states can be described by discrete possibilities, actions, percepts or not
+- singe vs multiagent
+- episodic vs sequential
+	- current actions influence all future decisions
+- known vs unkown

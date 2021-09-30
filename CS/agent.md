@@ -1,0 +1,8 @@
+- In [[AIMA]] an agent is defined as anything that can be viewed as perceiving its environment through sensors and acting on that environment through actuators (e.g humans, thermostats)
+-  We call 
+	-  **percepts** $P$, the perceptual inputs and their history as reported by the sensors
+	-  **actuators** $A$,  the means by which the agent is able to influence the environment (need not be physical)
+	-  **prior knowledge** $\pi$, the hard coded constraints/knowledge about the environment
+- Given these, we can form an abstract external characterisation of the agent  via some mathematical function $f$ which maps the prior knowledge and percepts to actions
+	- $f : P,\ \pi \to A$
+	- this is implemented internally as an **agent program**

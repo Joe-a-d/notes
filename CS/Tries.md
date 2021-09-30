@@ -1,0 +1,15 @@
+- Tries are to binary trees as [[Radix Sorting]] is to [[Comparison based-sorting]]
+	- nodes have a *key* value that is interpreted as a sequence of bits
+	- there is a *muliway branch* (instead of 2) at each node
+		- each with its own symbol unique amongst the sibling branches
+		- the branch taken at level $i$ during a search is determined by the $i$th bit stored as the key
+- the path from the root to a node spells out the key value of the item
+	- nodes representing words are labelled
+
+	- ![[Pasted image 20210914205108.png]]
+- **complexity**
+	- almost independent on the number of items
+	- linear in string length
+- **implementation**
+	- array (of pointers to represent the children of each node)
+	- linked list (to represent the children of each node)
