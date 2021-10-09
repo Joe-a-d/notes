@@ -1,11 +1,10 @@
-2021-09-15
 **Start**:
 **End**:
 
 #KevinBryson 
 
-# Progress since [[Minute-]]
-[[Minute-#Actionable Items]]
+# Progress since [[Minute_]]
+[[Minute_#Actionable Items]]
 
 # Blockers
 
