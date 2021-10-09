@@ -3,6 +3,24 @@ tags :
 related : 
 
 # Short Summary
+
+The task of nuclear segmentation is the first step when  trying to automate cell classification. This is not a straightforward task because (1) nuclei are very different both between different cell types and within the same type of cell; (2) occlusion, due to the nuclei being on top of each other. Given all this _"messiness"_ DL is a good approach.
+
+In this papers the authors present a model which incorporates segmentation and classification into a single model. The authors argue that energy-based methods such as the watershed algorithm are suboptimal since they rely on intensity differences between the nuclei and background which do not hold for complex images. Other approaches such as U-Net, DCAN, Mask-RCNN  improved upon these methods with the latter being of particular interest since it applies instance segmentation techniques by first predicting possible regions of interest segmentation followed by DL based segmentation on those regions.  W.r.t classification there are two common approaches (1) extract features from the segmented region and feed those into a classifier ; (2) detect a nucleus and feed its a patch from its center into the classifier
+
+Their new architecure (based on ResNet-50) has 3 _upsampling branches_
+	- **NC branch** predicts whether or not a pixel belongs to a nucleus or the background
+	- **HoVer branch** predicts the horizontal and vertical distances of nuclear pixels to their centre of mass
+	- **NC branch** (if labels are provided) classifies the type of nucleus by aggregating the nuclear type predictions within each instance
+
+The first two perform nuclear segmentation. The main idea here is that there will be a large difference between the pixel values at the edge of the nuclei, hence calculating the gradient makes it easy to identify them.
+
+W.r.t the evaluation framwork, they also suggest breaking these tasks into sub-tasks an evaluate them separately in order to make the network more interpretable. They argue that Dice and Jaccard similarity metrics don't perform well, mainly due to the over-penalisation of overlapping regions. Instead they propose the use of _Panoptic Quality_ as well. The whole framework is then:
+  1. DICE to measure the separation of all nuclei from the background
+  2. Panoptic Quality as a unified score for comparison publications
+  3. AJI for direct comparison with previous"
+
+
  
 ### Outline
  
@@ -113,8 +131,6 @@ related :
 
 - "therefore be effectively used as a prerequisite step before nuclear-based feature extraction. We have shown that utilising the horizontal and vertical distances of nuclear pixels to their centres of mass provides powerful instance-rich information, leading to state-of-the-art performance in histological nuclear segmentation." [[Graham_et_al_2019_HoVer-Net.pdf#page=14|summary of other results]]
 
-- "segment and" [[Graham_et_al_2019_HoVer-Net.pdf#page=14]]
-
 - "show that our model is able to successfully segment and classify nuclei with high accuracy." [[Graham_et_al_2019_HoVer-Net.pdf#page=14|classification summary when labels available]]
 
 - "Region proposal (RP) methods, such as Mask-RCNN, show great potential in dealing with overlapping instances because there is no notion of separating instances; instead nuclei are segmented independently. However, a major limitation of the RP methods is the difficulty in merging instance predictions between neigbouring tiles during processing." [[Graham_et_al_2019_HoVer-Net.pdf#page=14|How RP methods suchas as Mask-RCNN do well in the case of overlapping nuclei, but have a major limitation]]
@@ -131,16 +147,46 @@ related :
 
 - "Future work will involve obtaining more samples within this category, including necrotic and mitotic nuclei, to improve the class balance of the data" [[Graham_et_al_2019_HoVer-Net.pdf#page=15|future work; expanding to new types of nuclei to improve class balance of the data]]
 
+
 # Main Contributions
+- a neural network which simultaneously performs nuclear segmentation and classification 
+- a new evaluation framework for nuclear segmentation techniques which is both interpretable and reliable
+- a new dataset of labeled nuclei images
 
 # Problem addressed
 
+- Nuclear segmentation and classification
+	- in particular tries to address the case of complex images with clustered and overlapping nuclei
+
 # Results
+
+- network shown to detect nuclei with high accuracy , effectively separate clustered nuclei and classify them.
+- 3 branch approach achieves the state-of-the-art instance segmentation performance compared to a large number of recently published deep learning models across multiple datasets, including tissues that have been prepared and stained under different conditions
+- utilising the horizontal and vertical distances of nuclear pixels to their centres of mass provides powerful instance-rich information, leading to state-of-the-art performance in histological nuclear segmentation
+- shown to generalise for new organs with variation in nuclei shapes and nuclei with different centres which vary w.r.t levels of staining
+
 
 # Conclusion
 
+- the model seems to improve on most of the state-of-the-art methods of the time
+	- it is not however studied whether this will generalise to other types of cancer
+- 
+
 # Methodology
+
+Hardware and methodology:
+- TensorFlow version 1.8.0 [41] on a workstation equipped with two NVIDIA GeForce 1080 Ti GPUs.
+	-  single GPU with 12GB RAM fixed batch size of 1
+- transfer learning using ImageNet, trained only the decoders for 50 epochs -> total of 380 minutes
+- evaluated on two unseen datasets which varied w.r.t staining and nuclei shapes, but from same type of cancer
 
 # Learned
 
+- Since this served as a seed paper I learned a lot about the main problems within the field of digital pathology
+- The paper gave a (what it seemed to me) comprehensive introduction of the methods being used for this type of task and their shortcomings
+- I was not very familiar with neural networks, so even though I did not learn directly from the paper. I learned a bit about them and some of the more common architectures when doing secondary research in order to try and understand the paper a bit more
+
 # Why read?
+
+- Directly mentioned by supervisor on project proposal
+- Highly cited
