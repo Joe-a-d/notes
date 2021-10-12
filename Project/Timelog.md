@@ -43,7 +43,28 @@
 - *30m* pyTorch Blitz
 - *1h* DL Msc lecture 1
 
+### 2021-10-09
+
+- *3h* sci-py image processing , and general digital processing fundamentals familiarisation
+	- the aim was mainly to try and understand the shortcomings of simpler segmentation techniques described in the Hover-Net paper such as thresholding
+- *45m* overview of common cancer cell types; more focused research w.r.t histological features of healthy vs cancer and how the preparation of the samples affect the final image (e.g. staining)
+
 ## Week 4
+
+### 2021-10-11
+- *30m* pyTorch blitz
+- *1.5h* [[Goodfellow]] 5.11-6.3
+- *3h* [CS231n](https://cs231n.github.io/convolutional-networks/) #karpathy intro to [[CNN]]s
+	- initial blocker : understanding the parameterisation of kernel ; comparison with frozen layers mentioned in pyTorch Blitz
+
+### 2021-10-12
+
+- *1h* first pass of explainability papers
+- *1.5h* [CS230](https://cs230.stanford.edu/lecture/) Lecture 2 
+- *1h* research instance segmentation
+- *1h* [[convolutions]]
+- *2h* DL Msc Lecture 2
+- *10m* sketch out initial plan of attack
 
 ## Week 5
 
