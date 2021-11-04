@@ -74,7 +74,16 @@
 
 ## Week 7
 
+### 2021-11-03
+
+- *2h* CNN readings
+- *1h* RNN readings
+
+### 2021-11-04
+
 - *1h* playing around with `Conv2d` 
+- *2h* CNN readings
+- *2h* play around with MINST in pytorch
 
 ## Week 8
 
